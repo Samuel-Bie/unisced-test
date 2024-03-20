@@ -15,14 +15,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exceptions.EntityNotFoundException;
+import com.example.demo.jwt.service.AuthService;
 import com.example.demo.models.Project;
 import com.example.demo.services.ProjectService;
 
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/projects")
 public class ProjectController {
+
+	private AuthService authService;
 
 	@Autowired
 	private ProjectService projectService;
@@ -59,18 +64,16 @@ public class ProjectController {
 		}
 	}
 
-	
-	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Object> delete(@PathVariable Long id) {
-		
+
 		try {
 			projectService.delete(id);
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 		} catch (EntityNotFoundException e) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
-		
+
 	}
 
 }
