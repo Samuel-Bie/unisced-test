@@ -47,7 +47,7 @@ VALUES
 "administrator");
 
 ```
-2. Open postman to start testing
+2. Open postman to start testing, or just import the following collection to your postman https://www.postman.com/lunar-trinity-648598/workspace/job-applications/collection/7413633-b55189a8-10d5-4a6b-9914-135984e5bce4?action=share&creator=7413633
 
 Credentials
 
@@ -59,5 +59,7 @@ Credentials
 ```
 
 The endpoints are documented on postman collection published
+
+
 
 see this link https://documenter.getpostman.com/view/7413633/2sA358cQet 
